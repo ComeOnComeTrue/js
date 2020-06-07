@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../二级菜单栏/css/index.css">
+    <title>二级菜单栏</title>
+</head>
+<body>
+    <div class="nav">
+        <div class="container">
+            <ul class="nav-list clearfixed" id="navList">
+                <li>
+                    <a href="">首页</a>
+                </li>
+                <li >
+                    <a href="">关于禅壳</a>
+
+                    <div class="item">
+                        <ul class="item-list">
+                            <li><a href="">关于禅壳1</a></li>
+                            <li><a href="">关于禅壳2</a></li>
+                            <li><a href="">关于禅壳3</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="">产品</a>
+                </li>
+                <li>
+                    <a href="">服务与机构</a>
+                </li>
+                <li>
+                    <a href="">人才招聘</a>
+                    <div class="item">
+                        <ul class="item-list">
+                            <li><a href="">人才招聘1</a></li>
+                            <li><a href="">人才招聘2</a></li>
+                            <li><a href="">人才招聘3</a></li>
+                            <li><a href="">人才招聘4</a></li>
+                            <li><a href="">人才招聘5</a></li>
+                            <li><a href="">人才招聘6</a></li>
+                            <li><a href="">人才招聘7</a></li>
+                            <li><a href="">人才招聘8</a></li>
+                            <li><a href="">人才招聘9</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="">联系我们</a>
+                </li>
+            </ul>
+        </div>
+        <div>56544564564564654564564566456556645
+            45656645465465465465456645465456465456645
+            645456654465465465465465654465465
+            4656455456
+            465465
+            456465
+            64554655
+        </div>
+
+    </div>
+
+    <script>
+        let arr = [1]
+        var toString = Object.prototype.toString
+        console.log(toString(new Array()))
+        var navList = document.getElementById("navList").getElementsByTagName("li");
+        for(var i = 0; i< navList.length; i++){ //变量 拿到长度
+            navList[i].onmouseenter = function(){ //监听鼠标移动
+                //console.log(this);//输出对象
+                if(this.className != "show"){//优化直接输出
+                    this.className = "show";
+                }   
+            }
+            navList[i].onmouseleave = function(){ //监听鼠标离开
+                //console.log(this);
+                if(this.className != ""){
+                    this.className = "";
+                }   
+            }
+        }
+
+    </script>
+</body>
+</html>

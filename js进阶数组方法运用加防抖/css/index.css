@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.wrapper{
+    padding: 10px 15px;
+    width: 500px;
+    margin: 100px auto 0; 
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+/* searchWrapper */
+.wrapper .sWrapper{
+    margin-bottom: 20px;
+}
+.wrapper .sWrapper .sText {
+    width: 270px;
+    height: 25px;
+    padding-left: 10px;
+    outline: 0;
+    border-radius: 5px;
+}
+.wrapper .sWrapper .btn{
+    cursor: pointer;
+    margin: 0 5px;
+    padding: 0 5px;
+    color: #3c8dff;
+}
+.wrapper .sWrapper .btn.active{
+    font-weight: bold;
+    background-color: #3c8dff;
+    color: #fff;
+    border-radius: 6px;
+}
+/* friendListWrapper */
+/* .wrapper .flWrapper{
+    
+}
+.wrapper .flWrapper ul{
+
+} */
+.wrapper .flWrapper ul li{
+    position: relative; /*让img浮动内容移动65px就可以看见*/
+    height: 65px;
+    padding-left: 65px;
+    padding-top: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #999;
+    
+}
+.wrapper .flWrapper ul li .name{
+   font-size: 16px;
+   font-weight: bold;
+}
+.wrapper .flWrapper ul li .des{
+    margin-top: 10px;   
+    font-size: 12px;
+}
+.wrapper .flWrapper ul li img{
+    position: absolute; 
+    left: 0;
+    top: 10;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+}

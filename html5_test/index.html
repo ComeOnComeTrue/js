@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #demo1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        #demo2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+
+        #demo3 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        .wrapper {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+        } */
+        .demo {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo"></div>
+
+    <!-- <input type="text" id="inp">
+    <svg>
+        <path d="M 100 200 A 60 60 0 1 1 200 200"></path>
+        <path d="M 100 200 A 60 60 0 1 1 200 200" id="demo"></path>
+    </svg> -->
+
+    <!-- <div draggable="true"></div> -->
+    <!-- <canvas width="500" height="500"></canvas> -->
+    <!-- <div class="wrapper"></div> -->
+    <script>
+        var demo = document.getElementsByClassName('demo')[0];
+        function move() { // 方块移动动画
+            demo.style.left = demo.offsetLeft + 50 + 'px';
+            var timer = requestAnimationFrame(function (stemp) {
+                if (demo.offsetLeft > 500) {
+                    cancelAnimationFrame(timer); // 清除 停止
+                } else {
+                    move();
+                }
+            });
+            // var timer = requestAnimationFrame(move) // 第二种
+            // if (demo.offsetLeft > 500) {
+            //     cancelAnimationFrame(timer); // 清除 停止
+            // }
+        }
+        move();
+
+        // var socket = new WebSocket('ws://echo.websocket.org');
+        // console.log(socket.readyState)
+        // socket.onopen = function (e) {
+        //     socket.send('hello'); // 发送数据
+        //     console.log(socket.readyState)
+        // }
+        // socket.onmessage = function (e) { // 
+        //     console.log(e.data);// 服务器会每隔一段时间触发一次
+        //     socket.send('en');// 返回数据
+        //     console.log(socket.readyState)
+        // }
+
+        window.addEventListener('devicemotion', function (event) {
+            console.log(event);
+        });
+    </script>
+</body>
+
+</html>

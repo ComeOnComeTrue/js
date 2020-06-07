@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        /* div:target {
+            border: 1px solid red;
+        } */
+
+
+        /* 阴影按钮 */
+        /* div {
+            position: absolute;
+            left: calc(50% - 1px);
+            top: calc(50% - 1px);
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, .1);
+            transition: all 0.6s;
+        }
+
+        div:hover {
+            transform: scale(1.25, 1.25)
+        }
+
+        div::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, .5);
+            opacity: 0;
+            transition: all 0.6s;
+        }
+
+        div:hover::after {
+            opacity: 1;
+        } */
+
+        /* 鼠标移入字体换颜色加阴影效果 */
+        /* div{
+            position: absolute;
+            color: #ddd;
+            left: calc(50% - 250px);
+            top: calc(50% - 250px);
+            font-size: 80px;
+            width: 700px;
+            height: 100px;
+            text-shadow:0px 0px 10px #0f0,
+                        0px 0px 20px #0f0,
+                        0px 0px 30px #0f0;
+            transition: all 2s;
+        }
+        div:hover{
+            text-shadow:0px 0px 10px #f10,
+                        0px 0px 20px #f20,
+                        0px 0px 30px #f30;
+        }
+        div::before{
+            content: 'NO';
+            text-shadow: 0px 0px 10px #f10,
+                        0px 0px 20px #f20,
+                        0px 0px 30px #f30,
+                        0px -5px 10px #f10,
+                        0px -15px 20px #f20,
+                        0px -30px 30px #f30;
+            opacity: 0;
+            transition: all 3s;
+        }
+        div:hover::before{
+            opacity: 1;
+        } */
+
+
+        /* 死神来了 */
+        /* clip: text;遇见text-shadow，就会被文字挡住图片，可通过改变字体阴影的透明度解决 */
+        /* div{
+            background-image: url(./img/1.jpg);
+            background-position: -400px -50px;
+            font-size: 80px;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 2s;            
+            text-shadow: -5px -5px 3px rgba(255,0,255,.3),
+                            5px 5px 3px rgba(0,255,255,.3);
+        }
+        div:hover{
+            background-position: 0 -50px;
+        } */
+
+
+
+        /* 小说 */
+        /* div.content {
+            height: 500px;
+            column-width: 300px;
+            column-gap: 20px;
+            transition: all 1s;
+            transform: translateX(0px);
+        } */
+
+        /* div.content:hover{
+            transform: translateX(-320px);
+        } */
+
+        /* 居中 */
+        /* .wrapper{
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+        } */
+
+        /* 可动态增加导航栏 一行内容平分 */
+        /* .wrapper{
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            display: flex;
+        }
+        .item{
+            flex: 1 1 auto;
+            height: 30px;
+            text-align: center;
+        } */
+
+        /* 等分 */
+        /* .wrapper{
+            width: 400px;
+            height: 200px;
+            border: 1px solid black;
+            display: flex;
+        }
+        .content{
+            flex: 1 1 auto;
+            height: 100px;
+            border: 1px solid red;
+            box-sizing: border-box;
+        } */
+
+        /* 等分布局(4等分2等分，加margin等) */
+        /* .wrapper{
+            resize: both;
+            overflow: hidden;
+            width: 400px;
+            height: 200px;
+            border: 1px solid black;
+            display: flex;
+        }
+        .content{
+            flex: 1 1 auto;
+            height: 100px;
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+        .content:nth-of-type(2){
+            flex: 0 1 200px;
+        } */
+
+
+        /* 流式布局 模拟float */
+        /* .wrapper{
+            resize: both;
+            overflow: hidden;
+            width: 400px;
+            height: 800px;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+        .content{
+            flex: 1 1 auto;
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            box-sizing: border-box;
+        } */
+
+        /* 圣杯布局 */
+        /* .wrapper{
+            resize: both;
+            overflow: hidden;
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+        }
+        .header,.footer,.left,.right{
+            flex: 0 0 20%;
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+        .contain{
+            flex: 1 1 auto;
+            display: flex;
+        }
+        .center{
+            flex: 1 1 auto;
+        } */
+
+
+        /* @-wekbit-keyframes run{}
+@-moz-keyframes run{}    
+@keyframes run{ */
+        /* 把持续时间按设置的百分数分割 0%==from 100%==to*/
+        /* 0%{
+        left: 0;
+        top: 0;
+    }
+    25%{
+        left: 100px;
+        top: 0;
+    }
+    50%{
+        left: 100px;
+        top: 100px;
+    }
+    75%{
+        left: 0;
+        top: 100px;
+    }
+    100%{
+        left: 0;
+        top: 0;
+    }
+
+}
+div{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    -webkit-animation: run 4s;
+    animation: run 4s;
+} */
+
+    </style>
+</head>
+
+<body>
+    <!-- <div class="wrapper"></div> -->
+
+
+    <!-- <div class="wrapper">
+        <div class="header"></div>
+        <div class="contain">
+            <div class="left"></div>
+            <div class="center"></div>
+            <div class="right"></div>
+        </div>
+        <div class="footer"></div>
+    </div> -->
+
+
+    <!-- <a href="#box1">box1</a>
+    <a href="#box2">box2</a>
+    <div id="box1">a</div>
+    <div id="box2">b</div> -->
+
+    <!-- <div>ACCESS</div>
+    <div>死神来了</div> -->
+
+    <!-- <div class="wrapper">
+        <div class="content">布“封城”！
+            　　这是一个需要巨大政治勇气的决定。
+
+            　　这是一个需要巨大政治勇气的决定。
+
+            　　一个多月来，10余次重要会议、2次实地考察、数次指示批示，都彰显了总书记始终如一的“人民至上”的赤子之心。
+
+            　　——人民战争，更要紧紧依靠人民！
+
+            　　人民是真正的英雄。“在磨难中成长、从磨难中奋起”需要激发蕴藏于亿万人民中的磅礴力量。
+
+            　　“坚决打赢疫情防控的人民战争、总体战、阻击战！”统帅令出，三军景从。抗击疫情，人人都是“战士”。
+
+            　　5米不得见，这是“白衣战士”伉俪对岗位的坚守；1110级台阶，这是“社区战士”每天为居民守护健康的必经之路；10天，这是建设者在火神山战场拼尽的全力；0.5秒/只口罩，这是工人在保障战线上的硬核战绩……
+
+            　　14亿颗心，构筑起坚不可摧的人民防线。</div>
+
+    </div> -->
+
+
+
+    <script src="../jqueryDemo/my轮播图/js/jquery-3.4.1.js"></script>
+    <script>
+
+        // (function () { // 小说
+        //     var  a = 320;
+        //     var lack = false;
+        //     if(lack){
+        //         return;
+        //     }
+        //     $('.content').on('click', function () {
+        //         $('.content').css({ transform: 'translateX(-' + a +'px)' });
+        //         console.log($('.content').css({ transform: 'translateX(-' + a +'px)' }))
+
+        //         a += 320;
+        //         lack = true;
+        //     });
+        // }())
+
+
+    </script>
+
+
+</body>
+
+</html>

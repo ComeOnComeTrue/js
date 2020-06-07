@@ -1,0 +1,968 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script></script>
+    <style>
+        body,ul,li{
+            padding: 0;
+            margin: 0;
+        }
+        ul,li,a{
+            list-style-type: none;
+            text-decoration: none;
+        }
+        .div{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            left: 0;
+            top: 0;
+        }
+        .btn{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -25px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(to left ,#999,#432);
+            font-size: 15px;
+            color: #fff;
+            line-height: 50px;
+            text-align: center;
+        }
+        ul{
+            margin: 200px;
+            width: 200px;
+        }
+        ul li{
+            /* float: left; */
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="div" style="position: absolute;left: 0;top: 0;" ></div>
+    <div class="btn">加速
+        <span></span>
+    </div>
+    <ul>
+       <li img-data="0"></li>
+       <li img-data="0"></li>
+       <li img-data="0"></li>
+       <li img-data="0"></li>
+       <li img-data="0"></li>
+    </ul>
+    <script src="../test/js/tools.js"></script>
+    <!-- 五环居中 <div class="plat">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+        <div class="circle5"></div>
+    </div>
+     <style> 
+     *{
+         margin: 0px;
+         padding: 0px;
+     }
+     .plat{
+         position: absolute;
+         top:50%;
+         left: 50%;
+         margin-left: -180px;
+         margin-top: -94px;
+         width: 360px;
+         height: 188px;
+         border: 2px solid black;
+         
+     }
+    
+        .circle1,
+        .circle2,
+        .circle3,
+        .circle4,
+        .circle5{
+            position:absolute;
+            width: 100px;
+            height: 100px;
+            border: 10px solid black;
+            border-radius: 50%;
+        }
+        .circle1{
+            border-color: black;
+            top: 0;
+            left: 0;
+            
+        }
+        .circle2{
+            border-color: red;
+            top: 0px;
+            left: 120px;
+            z-index: 3;
+        }
+        .circle3{
+            border-color: blue;
+            top: 0;
+            left: 240px;
+        }
+        .circle4{
+            border-color: yellow;
+            top: 70px;
+            left: 60px;
+        }
+        .circle5{
+            border-color: green;
+            top: 70px;
+            left: 180px;
+            z-index: 6;
+        }
+    </style>  -->
+
+
+    <!-- 两栏布局
+        <div class="right"></div>
+        <div class="left"></div>
+     <style> 
+     *{
+         margin: 0px;
+         padding: 0px;
+     }
+     .right{
+         position: absolute;
+         right: 0;
+        opacity: 0.1;
+        width: 100px;
+        height: 100px;
+        background-color:red;
+     }
+     .left{
+       
+         margin-right: 100px;
+        height: 100px;
+        background-color:black;
+     }
+    </style> -->
+    
+    
+    <!--浮动元素 <div class="nav">
+            <ul>
+                <li class="list">
+                        <a href="">天猫</a>
+                </li>
+                <li class="list">
+                    <a href="">聚划算</a>
+                </li>
+                <li class="list">
+                        <a href="">优惠价格</a>
+                </li>
+            </ul>
+        </div>
+        jhkjhk
+          
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        li{
+            list-style: none;
+         }
+        .nav{
+            border: 1px solid red;
+        }
+        .nav::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .nav .list{
+            float: left;
+            height: 30px;
+            line-height: 30px;
+            margin: 0 20px;
+        }
+        .nav .list a{
+            padding: 0 10px;
+            display: inline-block;
+            font-weight: bold;
+            color: #f40;
+            font-size: 16px;
+            border-radius: 12px;
+        }
+        .nav .list a:hover{
+           color:#fff;
+            background-color: #f40;
+        }
+    </style> -->
+
+
+    <!-- 网速不行时显示文字 <a href="http://www.taobao.com">淘宝网</a>
+    <style>
+           
+    a{
+        display: inline-block;
+        text-decoration: none;
+        font-size: 20px;
+        width: 200px;
+        height: 100px;
+        border: 1px solid black;
+        background-image: url("https://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png");
+        background-repeat: no-repeat;
+        background-size: 200px 100px;
+
+        text-indent: 200px;/*首行缩进*/
+        white-space: nowrap;/*不换行*/
+        overflow: hidden;
+      
+    }
+    a{
+        display: inline-block;
+        text-decoration: none;
+        font-size: 20px;
+        width: 200px;
+
+        height: 0px;
+        padding-top:100px; 
+
+        border: 1px solid black;
+        background-image: url("https://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png");
+        background-repeat: no-repeat;
+        background-size: 200px 100px;
+        overflow: hidden;
+      
+    }
+    </style> -->
+
+
+  <script>
+    //n次幂  var n = parseInt(window.prompt("input"));
+    //  var mul = 1;
+    //  for(var i = 0;i < n; i++){
+    //    mul *= 2;
+    //  }
+    //  document.write(mul + " ");
+
+    //阶乘  var n = parseInt(window.prompt("input"));
+    //  var mul = 1;
+    //  for(var i = 1;i <= n; i++){
+    //    mul *= i;
+    //  }
+    //  document.write(mul + " ");
+
+    // var a = parseInt(window.prompt("input"));
+    // var b = parseInt(window.prompt("input"));
+    // var c = parseInt(window.prompt("input"));
+    // if(a > b ){
+    //     if(a > c){
+    //     console.log(a);
+    // }else{
+    //     console.log(c);
+    //     }
+    // }else{
+    //     if (b > c){
+    //         console.log(b);
+    //     }else {
+    //         console.log(c);
+    //     }  
+    // } 
+
+    //斐波那契数列 1 1 2  3 5 8 13 输出n项
+    // var n = parseInt(window.prompt('input'));
+    // var first = 1, 2 
+    //     second = 2, 3
+    //     third;  
+    // if(n > 2){
+    //     for(var i = 0; i < n - 2; i ++){
+    //         third = first + second; 
+    //         first = second;  
+    //         second = third;
+    //     }
+    //     document.write(third);
+    // }else{
+    //     document.write(1);
+    // }
+
+    //打印出100以内的质数
+    // var count = 0;
+    // for(var i = 0; i < 100; i++){
+    //     for(var j = 1; j <= i; j++){
+    //        if(i % j == 0){
+    //            count ++;
+    //        }
+    //     }
+    //     if(count == 2){
+    //         document.write(i + " ");
+    //     }
+    //     count = 0;
+    // }
+    // var count = 0;   简化
+    // for(var i = 2; i < 100; i++){
+    //     for(var j = 1; j <= Math.sqrt(i); j++){
+    //        if(i % j == 0){
+    //            count ++;
+    //        }
+    //     }
+    //     if(count == 1){
+    //         document.write(i + " ");
+    //     }
+    //     count = 0;
+    // }  
+    
+    //  
+    //  function scream(animal){
+    //     switch(animal){
+    //         case "dog":
+    //             document.write('汪');
+    //             return;
+    //         case "cat":
+    //             document.write('miao!');
+    //             return;
+    //         case "fish":
+    //             document.write('o~o~o~');
+    //             return;
+    //     }
+    //  }
+
+    // 输入数字逆向输出汉字   
+    // function reverse(){
+    //     var num = window.prompt('input');
+    //     var str = ""; 
+    //     for(var i = num.length - 1;i >= 0; i --){
+    //         str += transfer(num[i]);
+    //     }
+    //     document.write(str);
+    // }
+
+    // function transfer(target){
+    //     switch(target){
+    //         case "1" :
+    //             return "壹";
+    //         case "2" :
+    //             return "二";
+    //         case "3" :
+    //             return "三";
+    //         case "4" :
+    //             return "四"
+    //     }
+    // }
+
+    // 写一个函数，实现n的阶乘  递归  1.找规律 2.找出口
+    // function mul(n){
+    //     if(n == 1 || n == 0){
+    //         return 1;
+    //     }else{
+    //         return n * mul(n - 1);
+    //     }
+    // }
+
+    // 写一个函数，实线斐波那契数列。递归  1.找规律 2.找出口
+    // function fb(n){
+    //     if(n == 1 || n == 2){
+    //         return 1;
+    //     }else{
+    //         return fb(n - 1) + fb(n - 2);
+    //     }
+    // }
+
+    //  !!" " + !!"" - !!false || document.write('不能打印'); 1 ||
+
+
+    // var foo = 11;
+    //  function test(a,b){
+    //     function foo(){};
+    //     return foo;
+    //     var foo = 11;
+    //  }
+    //  test(1);
+    //  console.log(test()); //->function foo(){};
+
+    // a = 100;
+    // function demo(e) {
+    //     function e(){};
+    //     arguments[0] = 2;
+    //     console.log(e);  //2
+    //     if(a) {
+    //         var b = 123;
+    //         function c(){} //if里面不可以放function所以undefined
+    //     }
+    //     var c;
+    //     a = 10;
+    //     var a;
+    //     console.log(b);//if里面不可以放function所以undefined
+    //     f = 123;
+    //     console.log(c);//if里面不可以放function所以undefined
+    //     console.log(a);//10
+    // }
+    // var a;
+    // demo(1);
+    // console.log(a);//100
+    // console.log(f);//123
+    // window->GO{
+    //     a : 100,
+    //     demo : function (){},
+    //     f : 123;
+    // }
+    // AO {
+    //     e : 2,
+    //     b : undefined,
+    //     c : undefined,
+    //     a : 10;
+    // }
+
+    // 作用域链
+    // function test(){
+    //     num = 100;
+    //     function a(){
+    //         num ++;
+    //         console.log(num);
+    //         //b defined a.[[scope]]   0 : testAo
+    //         //                        1 : Go  
+    //     }
+    //     function b(){
+    //         num --;
+    //         console.log(num);
+    //         //b defined b.[[scope]]   0 : testAo
+    //         //                        1 : Go  
+    //     }
+    //     return [a,b];
+    // }
+    // var myArr = test();
+    // myArr[0](); // 101
+    //     //a doing    a.[[scope]]       0 : aAO
+    //         //                         1 : testAo 
+    //         //                         2 : GO
+    // myArr[1](); // 100
+    //     //b doing    b.[[scope]]       0 : bAO
+    //         //                         1 : 执行完a之后的testAo 
+    //         //                         2 : GO
+
+    // 闭包
+    // var plus = (function () {
+    //         var counter = 0; //局部变量，-》让全局变量有生命力
+    //         return function () { //局部变量 保存function并跳出
+    //             counter++;//私有化 全局变量得生命周期 局部变量
+    //             console.log("counter = " + counter)
+    //         }
+    //     })();
+    //     plus();// counter = 1;
+    //     plus();// counter = 2;
+
+    // for(var i = 0; i < 10; i ++){
+    //     document.write(i + " ");  // 0 - 9;
+    // }
+    // document.write(i + " "); // 0 - 10
+
+    // function test(){
+    //     var arr = [];
+    //     for(var i = 0; i < 10; i ++){
+    //         arr[i] = function (){
+    //             document.write(i + " ");
+    //         } 
+    //     } 
+    //     return arr;  
+    // }
+    // var myArr = test();
+    // for(var j = 0; j < 10; j ++){
+    //     myArr[j](); 
+    // }
+    // * 通过立即执行函数让输出10 - 10改0 - 9；
+    // function test(){
+    //     var arr = [];
+    //     for(var i = 0; i < 10; i ++){
+    //         (function(j){
+    //             arr[j] = function (){
+    //                 document.write(j + " ");
+    //             }
+    //         }(i))
+    //     } 
+    //     return arr;  
+    // }
+    // var myArr = test();
+    // for(var j = 0; j < 10; j ++){
+    //     myArr[j](); 
+    // }
+    
+    //闭包缓存结构 了解就好
+    // function test(){
+    //     var food = "apple";
+    //     var obj = {
+    //         eatFood : function (){
+    //             if(food != ""){
+    //                 console.log("I am eating" + food);
+    //                 food = ""; 
+    //             }else{
+    //                 console.log("There is nothing! empty!");
+    //             }
+    //         },
+    //         pushFood : function (myFood) {
+    //             food = myFood;
+    //         }
+    //     }
+    //     return obj;
+    // }
+    // var person = test();
+    // person.eatFood();//输出一次eatFood  food变空
+    // person.eatFood();//food空的
+    // person.pushFood('banana');// 让 food = "banana";
+    // person.eatFood();//再输出一次
+    
+    // 得出你输出的中文，数字，英文的字符
+    // var target = "我是多少个字节"
+    // function retBytesLen(target) {
+    //     var count = 0;
+    //     for(var i = 0; i < target.length; i++){
+    //         if(target.charCodeAt(i) <= 255){  // 单个字符长度 小于255一个字节
+    //             count ++;
+    //             console.log(count);
+    //         }else if(target.charCodeAt(i) > 255){ //字长度 大于255两个字节
+    //             count += 2;
+    //         }
+    //     }
+    //     console.log(count);
+    // }
+    // 简写
+    // function retBytesLen(target) {
+    //     var count = target.length;
+    //     for(var i = 0; i < target.length; i++){
+    //         if(target.charCodeAt(i) > 255){  // 字的字符长度
+    //             count ++;
+    //         }
+    //     }
+    //     console.log(count);
+    // }
+    // 优化简写  
+    // function retBytesLen(target) {
+    //     var count,
+    //         len,
+    //         count = len = target.length;
+    //     for(var i = 0; i < len; i++){
+    //         if(target.charCodeAt(i) > 255){  // 字的字符长度
+    //             count ++;
+    //         }
+    //     }
+    //     console.log(count);
+    // }
+
+    //  创建对象deng = {属性}     
+    // var deng = {
+    //     prepareWife : "xiaowang", // 预备妻子
+    //     name : "laodeng",
+    //     sex : "male",  // 男
+    //     gf : "xiaoliu",
+    //     wife : "",  //妻子
+    //     divorce : function (){   //离婚
+    //         delete this.wife;
+    //         this.gf = this.PrepareWife;
+    //     },
+    //     getMarried : function (){   // 结婚
+    //         this.wife = this.gf;
+    //     },
+    //     changePrepareWife : function (someone){
+    //         this.PrepareWife = someone;
+    //     }
+    // }
+
+    // 题  输出结果
+    // var str = "abc";
+    // str += 1;
+    // var test = typeof(str); //test == "String"
+    // if(test.length == 6){
+    //     test.sign = "typeof的返回结果可能为String";
+    //     //new String(test).sign = 'xxx'; delete
+    // }
+    // console.log(test.sign); // undefined
+
+    // 题  x,y,z分别是多少
+    // var x = 1, y = z = 0;
+    // function add(n){
+    //     return n += 1;
+    // }
+    // y = add(x);
+    // function add(n){  //域编译
+    //     return n += 3;
+    // }
+    // z = add(x);  // x = 1;y = 4;z = 4;
+
+    // 题  1,2 -> 2    var a = (1,2);= 2
+    // var f = (
+    //     function f(){
+    //         return "1";
+    //     },
+    //     function b(){
+    //         return 1;
+    //     }
+    // )();
+    // console.log(typeof f);  // Number
+
+    // 题 
+    // var x = 1;
+    // if( function f(){}){ //if(把函数当判断)
+    //     x += typeof f;
+    // }
+    // console.log(x);  // 1undefined
+
+    // 题 
+    //   var a = 5;
+    //   function test(){
+    //       a = 0 ;
+    //       alert(a);
+    //       alert(this.a);
+    //       var a ;
+    //       alert(a);
+    //   }
+    // test();  0 5 0   new test();  0 undefined 0
+     
+    // 题
+    // var bar = { a : "00"};
+    // function Print(){
+    //     bar.a = 'a';
+    //     Object.prototype.b  = 'b';
+    //     return function inner(){
+    //         console.log(bar.a);
+    //         console.log(bar.b);
+    //     }
+    // }
+    // Print()(); // a -> a, b ->b
+
+    // 题  给一个有序的数组，乱序
+    // var arr = [1,2,3,4,5,6,7];
+    // arr.sort(function(){
+    //     return Math.random() - 0.5;
+    // });
+
+    // 题 让这三个对象按照年龄排序
+    // var wo = {
+    //     age : 14,
+    // }
+    // var ni = {
+    //     age : 28,
+    // }
+    // var ta = {
+    //     age : 18,
+    // }
+    // var arr = [wo,ni,ta];
+    // arr.sort(function (a,b) {
+    //     //  if(a.age - b.age > 0){
+    //     //     return 1;
+    //     // }else{
+    //     //     return -1;
+    //     // }
+    //     return a.age - b.age;   
+    // });
+
+    // 题 按字节长度排序
+    // function retBytes(str){
+    //     var num = str.length;
+    //     for(var i = 0; i < str.length; i ++){
+    //         if(str.charCodeAt(i) > 255){
+    //             num ++;
+    //         }
+    //     }
+    //     return num;
+    // }
+    // var arr = ['啦啦啦','啦','lalalala','lalal'];
+    // arr.sort(function (a,b){
+    //     // if(retBytes(a) - retBytes(b) > 0){
+    //     //     return 1;
+    //     // }else{
+    //     //     return -1;
+    //     // }
+    //     return retBytes(a) - retBytes(b);
+    // });
+
+    // 题 下面类数组现在变什么样了     
+    // var obj = {
+    //     "2" : "a",  // 输出时变成c
+    //     "3" : "b",  // 变 成 b
+    //     length : 2,  //变 成 4
+    //     push : Array.prototype.push,
+    // }
+    // obj.push('c');
+    // obj.push('b');
+
+    //封装函数，返回元素e的第n个兄弟元素节点，n为正，返回后面的兄弟元素节点，n为负，返回前面的，n为0，返回自己
+    // function retSibling(e,n) { //retSibling(strong,n);
+    //     while(e && n) {
+    //         if(n > 0){
+    //             if(e.nextElementSibling) { //前一个兄弟元素节点
+    //                 e = e.nextElementSibling;
+    //             }else{
+    //                 for(e = e.nextSibling; e && e.nodeType != 1; e = e.nextSibling);
+    //             }//e = e后一个兄弟节点;e && 元素节点；e = e后一个兄弟节点;
+    //             n --;
+    //         }else{
+    //             if(e.previousElementSibling) { // 后一个兄弟元素节点
+    //                 e = e.previousElementSibling;
+    //             }else{
+    //                 for(e = e.previousSibling; e && e.nodeType != 1; e = e.previousSibling);
+    //             }//e = e前一个兄弟节点;e && 元素节点；e = e前一个兄弟元素;
+    //             n ++;
+    //         }
+    //     }
+    //     return e;
+    // }
+    // var strong = document.getElementsByTagName('strong')[0];
+    //自己简化
+    // function retSibling(e,n) { //retSibling(strong,n);
+    //     while(e && n) {
+    //         if(n > 0){
+    //             if(e.previousElementSibling) { // 后一个兄弟元素节点
+    //                 for(e = e.nextSibling; e && e.nodeType != 1; e = e.nextSibling);
+    //             }//e = e后一个兄弟节点;e && 元素节点；e = e后一个兄弟节点;
+    //             n --;
+    //         }else{
+    //             if(e.nextElementSibling) {  // 前一个兄弟元素节点
+    //                 for(e = e.previousSibling; e && e.nodeType != 1; e = e.previousSibling);
+    //             }//e = e前一个兄弟节点;e && 元素节点；e = e前一个兄弟元素;
+    //             n ++;
+    //         }
+    //     }
+    //     return e;
+    // }
+    // var strong = document.getElementsByTagName('strong')[0];
+
+    //封装myChildren功能，解决以前部分浏览器的兼容性问题 Children返回当前元素的元素节点
+    // var div = document.getElementsByTagName('div')[0];
+    // Element.prototype.myChildren = function (){
+    //     var child = this.childNodes;
+    //     var len = child.length;
+    //     var arr = [];
+    //     for(var i = 0; i < len; i++){
+    //         if(child[i].nodeType == 1){
+    //             arr.push(child[i]);
+    //         }
+    //     }
+    //     return arr;
+    // }
+
+    //封装函数insertAfter();功能类似insertBefore();
+    // Element.prototype.insertAfter = function (targetNode,afterNode) {
+    //     var beforeNode = afterNode.nextElementSibling; //前一个兄弟元素节点
+    //     if(beforeNode == null){
+    //         this.appendChild(targetNode); //把targetNode剪切给this
+    //     }else{
+    //         this.insertBefore(targetNode,beforeNode);//把targetNode剪切在beforeNode前面
+    //     }
+    // }
+    // var div = document.getElementsByTagName('div')[0];
+    // var span = document.getElementsByTagName('span')[0];
+    // var strong = document.getElementsByTagName('strong')[0];
+    // var p = document.createElement('p');
+
+    //用定时器做一个右边每六十清零左边加一
+    //minutes:<input type="text" value="0">
+    //seconds:<input type="text" value="0">
+    // var minutesNode = document.getElementsByTagName('input')[0];
+    // var secondsNode = document.getElementsByTagName('input')[1];
+    // var minutes = 0,
+    //     seconds = 0;
+    // var timer = setInterval(function () {
+    //     seconds ++;
+    //     if(seconds == 60){
+    //         seconds = 0;
+    //         minutes ++;
+    //     }
+    //     minutesNode.value = minutes;
+    //     secondsNode.value = seconds;
+    //     if(minutes == 3){
+    //         clearInterval(timer);
+    //     }
+    // },10);
+    
+    // // 用scrollBy展示小说阅读功能  附加小操作点击返回滚动条初始位置
+    // var start = document.getElementsByClassName('start')[0];
+    // var ret = document.getElementsByClassName('ret')[0];
+    // var timer = 0;
+    // var key = true;
+    // // var a = 0;
+    // start.onclick = function (){
+    //     if(key) {
+    //         timer = setInterval(function () {
+    //             window.scrollBy(0, 10);
+    //         }, 100);
+    //         key = false;
+    //     } 
+    //     // a = document.documentElement.scrollTop + document.body.scrollTop;
+    //     // console.log(a);
+    // }    
+    // ret.onclick = function () {
+    //     clearInterval(timer);
+    //     // window.scrollTo(0, a);
+    //     // console.log(a);
+    //     key = true;
+    // }
+
+    // 通过调用css属性 实现方块移动效果
+    // var div = document.getElementsByTagName('div')[0];
+    // function getStyle(elem, prop) {
+    //     if(window.getComputedStyle) {
+    //         return window.getComputedStyle(elem, null)[prop];//IE9以上兼容
+    //     }else{
+    //         return elem.currentStyle[prop]; //IE9以下兼容
+    //     }
+    // }
+    // var speed = 3;
+    // timer = setInterval(function () {
+    //     speed += speed/7;
+    //     div.style.left = parseInt(getStyle(div, 'left')) + speed + 'px';
+    //     if(parseInt(div.style.left) > 500){
+    //         clearInterval(timer);
+    //     } 
+    // },10);
+
+    //闭包问题 用getElementsByTagName事件输出ul中的四个li的顺序
+    // var liList = document.getElementsByTagName('li');
+    // for(var i = 0; i <liList.length; i++){
+    //     (function(i){
+    //         liList[i].addEventListener('click',function () {
+    //             console.log(i);
+    //         });
+    //     })(i);
+    // }
+    
+    // 小知识点 取消a标签默认功能 使它刷新不了跳转不了到最顶端
+    //行间写 <a href="javascript:vodi(false)">demo</a>
+    // a.onclick = function () {
+    //     return false;
+    // }
+
+    // //通过事件委托 写一个当点击ul里面的li时 返回里面的内容
+    // var ul = document.getElementsByTagName('ul')[0];
+    // ul.onclick = function (e) {
+    //     var event = e || window.event;
+    //     var target = event.target || event.srcElement;
+    //     console.log(target.innerText);
+    // }
+
+    // 拖拽 点击之后跟着鼠标走  利用鼠标事件
+    // var div = document.getElementsByTagName('div')[0];
+    // var disX,
+    //     disY;
+    // div.onmousedown = function (e) {
+    //     disX = e.pageX - parseInt(div.style.left);
+    //     disY = e.pageY - parseInt(div.style.top);
+    //     window.onmousemove = function (e) {
+    //         var event = e || window.event;
+    //         div.style.left = e.pageX - disX + "px"; // pageIE不让用 改 client
+    //         div.style.top = e.pageY - disY + "px";
+    //         console.log(div.style.left);
+    //         console.log(div.style.top);
+    //     }
+    //     div.onmouseup = function () {
+    //         window.onmousemove = null;
+    //     }
+    // }
+    // 封装
+    // function drag(elem) {
+    //     var disX,
+    //         disY;
+    //     this.onmousedown = function (e) {
+    //         disX = e.pageX - parseInt(div.style.left);
+    //         disY = e.pageY - parseInt(div.style.top);
+    //         window.onmousemove = function (e) {
+    //             var event = e || window.event;
+    //             elem.style.left = e.pageX - disX + "px";
+    //             elem.style.top = e.pageY - disY + "px";
+    //         }
+    //         window.onmouseup = function () {
+    //             this.onmousemove = null;
+    //         }
+    //     }
+    // }
+    // 兼容
+    // function drag(elem) {
+    //     var disX,
+    //         disY;
+    //     addEvent(elem, 'mousedown', function (e){
+    //         var event = e || window.event;
+    //         disX = e.pageX - parseInt(div.style.left);
+    //         disY = e.pageY - parseInt(div.style.top);
+    //         addEvent(document, 'mousemove', mouseMove);
+    //         addEvent(document, 'mouseup', mouseUp);
+    //         stopBubble(event);
+    //         cancelHandler(event);
+    //     }); 
+    //     function mouseMove(e) {
+    //         var event = e || window.event;
+    //         elem.style.left = e.pageX - disX + "px";
+    //         elem.style.top = e.pageY - disY + "px";
+    //     }
+    //     function mouseUp(e) {
+    //         var event = e || window.event;
+    //         removeEvent(document, 'mousemove',mouseMove);
+    //         removeEvent(document, 'mouseup',mouseUp);
+    //     }
+    // }
+
+    // 如何分辨解决点击和拖拽问题
+    // var firstTime = 0,
+    //     lastTime = 0,
+    //     key = false;
+    // document.onmousedown = function () {
+    //     firstTime = new Date().getTime();
+    // }
+    // document.onmouseup = function () {
+    //     lastTime = new Date().getTime();
+    //     if(lastTime - firstTime < 300){
+    //         key = true;
+    //     }
+    // }
+    // document.onclick = function () {
+    //     if(key){
+    //         console.log('click');
+    //         key = false;
+    //     }
+    // }
+
+    // 方块上下左右移动
+    // document.onkeydown = function(e){
+    //     var e = event || window.event;
+    //     var speed = 5;
+    //     switch(e.which){//ie专有的keyCode不建议用
+    //         case 37:
+    //         div.style.left = parseInt(div.style.left) - speed + "px";  // left
+    //             break;
+    //         case 38:
+    //         div.style.top = parseInt(div.style.top) - speed + "px";    // up
+    //             break;
+    //         case 39:
+    //         div.style.left = parseInt(div.style.left) + speed + "px";  // down
+    //             break;
+    //         case 40:
+    //         div.style.top = parseInt(div.style.top) + speed + "px";  // right
+    //             break;
+    //     }
+    // }
+    // 让每个li添加背景然后一点点去色
+    // var ul = document.getElementsByTagName('ul')[0];
+    // ul.onmousemove = function(e){
+    //     var event = e || window.event;
+    //     var target = event.target || event.srcElement; 
+    //     target.setAttribute('img-data',parseInt(target.getAttribute('img-data')) + 10);
+    //     target.style.backgroundColor = "rgb(255,255,"+ target.getAttribute('img-data') +")";
+    // }
+
+
+    
+        // pageXOffset
+
+
+
+
+
+ </script>
+
+</body>
+</html>
