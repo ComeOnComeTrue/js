@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // // Promise 承诺
+        // // Deferred 
+        // // done    fail    progress
+        // // resolve reject  notify
+        // // pending  onFulfilled onRejected
+        // setTimeout(() => {
+        //     console.log('setTime');
+        // }, 0);
+        // // 同步执行 跟jQ的Deferred很像
+        // let oP = new Promise((resolve, reject) => {
+        //     // 异步操作
+        //     //大于六十触发成功回调，小于触发失败回调
+        //     setTimeout(() => {
+        //         Math.random() * 100 > 60 ? resolve('ok') : reject('no');
+        //     }, 1000);
+        //     console.log(0);
+        //     resolve(1);
+        // });
+        // // 宏任务              微任务
+        // // task queue 1     task queue 2
+        // // 微任务有优先执行权  then是微任务 setTimeout这样的是宏任务
+        // // jq 你不知道的js UI 多线程
+        // // 注册 成功和失败回调 then 异步执行
+        // oP.then((val) => {
+        //     console.log(val);
+        // }, (reason) => {
+        //     console.log(reason);
+        // });
+        // // console.log(2);
+        // // 1 2 1 setTime
+
+
+        // let oP = new Promise((resolve, reject) => {
+        //     // 异步操作
+        //     // setTimeout(() => {
+        //     //     Math.random() * 100 > 60 ? resolve('ok') : reject('no');
+        //     // }, 1000);
+        //     resolve('ok');
+        // });
+        // // 链式操作
+        // // 上一个不抛出错误的话，那下一个then执行成功的函数
+        // // 返回值作为下一个then注册函数的执行参数
+        // // 如果返回值是Promise 对象 下一个then成功或失败取决于Promise
+        // //上一个then 注册的函数抛出错误 下一个then的失败回调就会执行
+
+        // oP.then((val) => {
+        //     console.log(val);
+        //     throw new Error('duyi');
+        //     //    return new Promise((resolve, reject) => {
+        //     //         reject('newPromise ok');
+        //     //    });
+        // }, (reason) => {
+        //     console.log(reason);
+        //     return 30;
+        // }).then((val) => {
+        //     console.log('ok then2:' + val);
+        // }, (reason) => {
+        //     console.log('no then2:' + reason);
+        // });
+
+
+
+        
+        // 捕获错误信息
+        let oP = new Promise((res, rej) => {
+            // throw new Error('duyi');
+            res();
+        });
+        // 链式调用的时候如果写一个空then其实相当于不存在可以忽视
+        oP.then(() => {
+            throw new Error('duyi');
+        }, (reason) => {
+            console.log(reason)
+        }).then().then(() => {
+
+        }).then(null, (reason) => {//输出错误信息
+            console.log(reason)
+        }).catch((err) => { //前面输出了错误信息，这边直接跳过
+            console.log(98, err);
+            return 10; 
+        }).then((val) => {// 前面输出错误信息之后没有错误信息，执行res
+            console.log('catch after ok:' + val)
+        }, (reason) => {
+            console.log('catch after no:' + reason)
+        }).finally(() => { //结束回调
+            console.log('over')
+        });
+
+
+
+    </script>
+</body>
+
+</html>

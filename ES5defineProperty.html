@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="demo" >
+    <div id = "show"></div>
+
+    <script>
+        var oDiv = document.getElementById('show');
+        var oInput = document.getElementById('demo');
+        var oData = {
+            valueObj:{
+                value: 'xx',
+                name: 'aa'
+            },
+            value: 'a'
+        };
+
+        function upDate () {
+            oDiv.innerText = oData.valueObj.value;
+        }
+
+        oInput.oninput = function () {
+            oData.value = this.value;
+        }
+
+        upDate();
+
+
+        // 监控对象的某个属性是否发生变化
+        function Observer (data) {
+            if (!data || typeof data != 'object') {
+                return data;
+            };
+            //Object.keys(data)// 输出的对象变成类数组
+            Object.keys(data).forEach(function (key) {//key == ele
+                definedRective(data, key, data[key]);
+            });
+        }
+
+        // 监控方法
+        function definedRective (data, key, val) {
+            // AO
+            Observer(val); // 递归
+            Object.defineProperty(data, key, { // 定义或修改对象属性
+                get () { // 获取对象属性触发
+                    return val;
+                },
+                set (newValue) { // 设置对象属性触发
+                    if (newValue == val) return; // 上次修改的值和这次相同，直接跳出
+                    val = newValue;
+                    upDate();
+                }
+            });
+        };
+        Observer(oData);// 第一次执行
+
+        console.log(oData.value);
+        oData.valueObj.value = 'haha'
+
+
+
+
+        // vue 里怎么写的 劫持数据  数组改变时劫持
+        // var arr = [1,32,];
+        // let {push} = Array.prototype;
+        // function upData () {
+        //     console.log('更新了');
+        // }
+
+        // Object.defineProperty(Array.prototype, 'push', { // 添加push属性
+        //     value : (function () {
+        //         return (...arg) => {
+        //             push.apply(arr, arg) // this指向arr  arg当值 push到数组
+        //             upData();
+        //         }
+        //     }()),
+        // })
+        // arr.push(1,2);
+
+
+
+    </script>
+
+</body>
+</html>
